@@ -20,6 +20,13 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'pangloss/vim-javascript'
+Plug 'elzr/vim-json'
+Plug 'mattn/emmet-vim'
+Plug 'dense-analysis/ale'
+Plug 'vim-airline/vim-airline'
+Plug 'sheerun/vim-polyglot'
+Plug 'preservim/nerdtree'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'jremmen/vim-ripgrep'
@@ -54,7 +61,7 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
-
+nnoremap <leader>n :NERDTree <CR>
 nnoremap <leader>u :UndotreeShow<CR>
 "firstly splits two windows, then uses :Ex to netrw to where we just were
 "then resizes vertically 30
