@@ -1,5 +1,8 @@
 syntax on
 
+set guioptions-=m  "menu bar
+set guioptions-=T  "toolbar
+set guioptions-=r  "scrollbar
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -13,6 +16,8 @@ set nobackup
 set undodir=~/vimfiles/undodir
 set undofile
 set incsearch
+set encoding=utf-8
+set backspace=indent,eol,start  " more powerful backspacingi
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
@@ -21,14 +26,14 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 call plug#begin('~/vimfiles/plugged')
 
 Plug 'preservim/nerdtree'
-Plug 'ycm-core/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
-Plug 'lyuts/vim-rtags'
 Plug 'mbbill/undotree'
 Plug 'kien/ctrlp.vim'
+Plug 'lyuts/vim-rtags'
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
@@ -66,6 +71,10 @@ nnoremap <silent> <leader>+ :verticle resize +5<CR>
 nnoremap <silent> <leader>- :verticle resize -5<CR>
 
 "ycm
+""visual studio error can be fixed by running python install.py with
+"msvc=115
+
+
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
 
