@@ -25,6 +25,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/vimfiles/plugged')
 
+Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'jremmen/vim-ripgrep'
@@ -32,8 +33,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
 Plug 'kien/ctrlp.vim'
-Plug 'lyuts/vim-rtags'
-Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
@@ -70,11 +69,14 @@ nnoremap <leader>ps :Rg<SPACE>
 nnoremap <silent> <leader>+ :verticle resize +5<CR>
 nnoremap <silent> <leader>- :verticle resize -5<CR>
 
+autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python' shellescape(@%, 1)<CR>
+
 "ycm
 ""visual studio error can be fixed by running python install.py with
 "msvc=115
 
 
-nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
+"nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
+"nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
 
