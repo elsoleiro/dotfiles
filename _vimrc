@@ -3,6 +3,7 @@ syntax on
 set guioptions-=m  "menu bar
 set guioptions-=T  "toolbar
 set guioptions-=r  "scrollbar
+set guioptions-=l "scrollbar l
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
