@@ -22,6 +22,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'preservim/nerdtree'
 Plug 'mbbill/undotree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -40,6 +43,7 @@ let g:netrw_banner = 0
 let g:netrew_winsize = 25
 
 let g:ctrlp_use_caching = 0
+let g:airline_theme='simple'
 
 "remap screen movement " " + key
 nnoremap <leader>h :wincmd h<CR>
@@ -56,3 +60,8 @@ nnoremap <leader>ps :Rg<SPACE>
 nnoremap <silent> <leader>+ :verticle resize +5<CR>
 nnoremap <silent> <leader>- :verticle resize -5<CR>
 
+"run python shell with f9
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!clear' <CR>:exec '!python' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!clear' <CR>:exec '!python' shellescape(@%, 1)<CR>
+
+autocmd FileType lisp map <buffer> <F9> :w<CR>:exec '!clear' <CR>:exec '!clisp' shellescape(@%, 1)<CR>
