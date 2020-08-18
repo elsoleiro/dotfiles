@@ -65,3 +65,9 @@ autocmd FileType python map <buffer> <F9> :w<CR>:exec '!clear' <CR>:exec '!pytho
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!clear' <CR>:exec '!python' shellescape(@%, 1)<CR>
 
 autocmd FileType lisp map <buffer> <F9> :w<CR>:exec '!clear' <CR>:exec '!clisp' shellescape(@%, 1)<CR>
+autocmd FileType lisp imap <buffer> <F9> <esc>:w<CR>:exec '!clear; clisp' shellescape(@%, 1)<CR>
+
+autocmd FileType cpp map <buffer> <F9> :w<CR>:exec '!clear' <CR>:exec '!g++ % && ./a.out' shellescape(@%, 1)<CR>
+autocmd FileType cpp imap <buffer> <F9> <esc>:w<CR>:exec '!clear' <CR>:exec '!g++ % && ./a.out' shellescape(@%, 1)<CR>
+
+autocmd FileType c imap  <F9> :w <CR>:!clear <CR> :!gcc % && ./a.out <CR>
