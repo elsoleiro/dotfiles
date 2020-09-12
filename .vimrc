@@ -8,6 +8,7 @@ set smartindent
 set nu
 set nowrap
 set smartcase
+set nowritebackup
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
@@ -15,7 +16,7 @@ set undofile
 set incsearch
 
 set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+highlight ColorColumn ctermbg=3 guibg=lightgrey
 
 
 call plug#begin('~/.vim/plugged')
@@ -70,4 +71,5 @@ autocmd FileType lisp imap <buffer> <F9> <esc>:w<CR>:exec '!clear; clisp' shelle
 autocmd FileType cpp map <buffer> <F9> :w<CR>:exec '!clear' <CR>:exec '!g++ % && ./a.out' shellescape(@%, 1)<CR>
 autocmd FileType cpp imap <buffer> <F9> <esc>:w<CR>:exec '!clear' <CR>:exec '!g++ % && ./a.out' shellescape(@%, 1)<CR>
 
-autocmd FileType c imap  <F9> :w <CR>:!clear <CR> :!gcc % && ./a.out <CR>
+autocmd FileType c imap <buffer> <F9> <esc>:w<CR>:exec '!clear' <CR>:exec '!gcc -o test %' shellescape(@%, 1)<CR>
+autocmd FileType c map <buffer> <F9> :w<CR>:exec '!clear' <CR>:exec '!gcc -o test %' shellescape(@%, 1)<CR>
