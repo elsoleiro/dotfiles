@@ -1,4 +1,5 @@
 syntax on
+colorscheme desert
 
 set noerrorbells
 set tabstop=4 softtabstop=4
@@ -18,6 +19,11 @@ set incsearch
 set colorcolumn=80
 highlight ColorColumn ctermbg=3 guibg=lightgrey
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 call plug#begin('~/.vim/plugged')
 
