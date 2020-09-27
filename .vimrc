@@ -1,6 +1,12 @@
 syntax on
-colorscheme desert
-
+highlight Statement ctermfg=red
+highlight LineNr ctermfg=darkred
+highlight Comment ctermfg=brown
+highlight Constant ctermfg=darkmagenta
+highlight Normal ctermfg=black
+highlight Type ctermfg=darkgrey
+highlight Identifier ctermfg=blue
+highlight Special ctermfg=darkblue
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -17,7 +23,7 @@ set undofile
 set incsearch
 
 set colorcolumn=80
-highlight ColorColumn ctermbg=3 guibg=lightgrey
+highlight ColorColumn ctermbg=1 guibg=white
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
