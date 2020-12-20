@@ -5,19 +5,14 @@
 (global-display-line-numbers-mode)
 (set-fringe-mode 0)
 (add-hook 'org-mode-hook (lambda () (linum-mode 0)))
-
-
 ; set default font
 (set-face-attribute 'default nil
 		    :family "Source Code Pro"
 		    :height 90
 		    :weight 'normal
 		    :width 'normal)
-
-
 ; themes
 (load-theme 'adwaita)
-
 ; packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -41,7 +36,23 @@
     (setq dashboard-set-footer nil)
     (setq dashboard-set-init-info nil)
     (setq dashboard-startup-banner "~/downloads/pi.png"))
-    
-
   :config
   (dashboard-setup-startup-hook))
+;; scheme
+(set-variable (quote scheme-program-name) "stk")
+(defun exec-scheme ()
+  (interactive)
+  (defvar foo)
+  (setq foo (concat "scheme " (buffer-name)))
+  (shell-command foo))
+(global-set-key [f8] 'exec-scheme)
+
+
+;; c
+(defun execute-c ()
+  (interactive)
+  (defvar foo)
+  (setq foo (concat "gcc " (buffer-name) " && ./a.out" ))
+  (shell-command foo))
+(global-set-key [f9] 'execute-c)
+
