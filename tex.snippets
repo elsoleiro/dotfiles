@@ -1,0 +1,23 @@
+snippet begin \begin{} ... \end{} block
+	\\begin{${1:env}}
+		${0:${VISUAL}}
+	\\end{$1}
+snippet enum enumerate environment
+	\\begin{enumerate}
+		\\item ${0:${VISUAL}}
+	\\end{enumerate}
+snippet enuma enumerate environment
+	\\begin{enumerate}[label=\\${1:env}]
+		\\item ${0:${VISUAL}}
+	\\end{enumerate}
+
+snippet flushl flush left environment
+	\\begin{flushleft}
+		${0:${VISUAL}}
+	\\end{flushleft}
+
+snippet center center environment
+	\\begin{center}
+		${0:${VISUAL}}
+	\\end{center}
+
