@@ -1,12 +1,5 @@
 syntax on
-highlight Statement ctermfg=red
-highlight LineNr ctermfg=darkred
-highlight Comment ctermfg=brown
-highlight Constant ctermfg=darkmagenta
-highlight Normal ctermfg=black
-highlight Type ctermfg=darkgrey
-highlight Identifier ctermfg=blue
-highlight Special ctermfg=darkblue
+let g:snipMate = { 'snippet_version' : 0 }
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -21,9 +14,11 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
-
-set colorcolumn=80
-highlight ColorColumn ctermbg=1 guibg=white
+set wrap nolinebreak nolist
+au ColorScheme * hi Error NONE
+au ColorScheme * hi ErrorMsg NONE
+au GuiEnter * hi Error NONE
+au GuiEnter * hi ErrorMsg NONE
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -38,6 +33,9 @@ Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 
 call plug#end()
 
