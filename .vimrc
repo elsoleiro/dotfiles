@@ -36,9 +36,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
+Plug 'flazz/vim-colorschemes'
 
 call plug#end()
 
+colorscheme 256-grayvim
 
 "allows rg to detect route, searching for git route and also uses git ignore
 if executable('rg')
@@ -83,3 +85,6 @@ autocmd FileType cpp imap <buffer> <F9> <esc>:w<CR>:exec '!clear' <CR>:exec '!g+
 
 autocmd FileType c imap <buffer> <F9> <esc>:w<CR>:exec '!clear' <CR>:exec '!gcc -o test %' shellescape(@%, 1)<CR>
 autocmd FileType c map <buffer> <F9> :w<CR>:exec '!clear' <CR>:exec '!gcc -o test %' shellescape(@%, 1)<CR>
+
+autocmd FileType tex imap <buffer> <F9> <esc>:w<CR>:exec '!make'<cr>
+autocmd FileType tex map <buffer> <F9> :w<CR>:exec '!make'<cr>
